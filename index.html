@@ -130,7 +130,7 @@
 		//Aux function that returns true if HTML5 element is supported in browser. Otherwise, return false
 		function html5_element_supported(tag)
 		{
-			if(!navigator[tag])
+			if(navigator[tag])
 			{
 				var element = document.createElement(tag);
 		    	return Object.prototype.toString.call(element) !== '[object HTMLUnknownElement]';
