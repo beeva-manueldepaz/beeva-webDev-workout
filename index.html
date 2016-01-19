@@ -3,14 +3,13 @@
 <head>
 	<title>Exercise 1</title>
 	<script src="js/modernizr-custom.js"></script>
-
 	<style>
 		li{
 			list-style: none;
 		}
 		section{
 			width: 900px;
-			height: 250px;
+			height: 230px;
 			margin: 0px auto;
 		}
 		.column{
@@ -21,7 +20,8 @@
 			border-bottom: 1px solid #000;
 		}
 		#section-3{
-			height: 100%;
+			border-top: 0px solid #000;
+			height: 50px;
 		}
 
 	</style>
@@ -45,7 +45,8 @@
 		</audio>
 	</section>
 	<section id="section-3">
-		
+		<button onclick="get_location()">Get position</button>
+		<p id="position"></p>
 	</section>
 	<footer></footer>
 	<script>
@@ -55,9 +56,6 @@
 
 		check_modernizr(mock_input, id1);
 		check_html5(mock_input, id2);
-
-		if(navigator.geolocation)
-			console.log('ok');	
 
 		function check_modernizr(v, id)
 		{
@@ -107,41 +105,26 @@
 				return true;
 			}
 		}
-		initMap();
+	</script>
+	<script>
+		var elm = document.getElementById("position");
 
-		function initMap() {
-  var map = new google.maps.Map(document.getElementById('section-3'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 6
-  });
-  var infoWindow = new google.maps.InfoWindow({map: map});
-
-  // Try HTML5 geolocation.
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
-      map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-  }
-}
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
-}
+		function get_location()
+		{
+		    if(html5_element_supported('geolocation'))
+		    {	
+		        navigator.geolocation.getCurrentPosition(show_position);
+		    }
+		    else
+		    { 
+		        elm.innerHTML = "Geolocation is not supported by this browser.";
+		    }
+		}
+		
+		function show_position(position)
+		{
+		    elm.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+		}
 	</script>
 </body>
 </html>
