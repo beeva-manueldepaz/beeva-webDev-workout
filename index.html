@@ -8,20 +8,15 @@
 			list-style: none;
 		}
 		section{
-			width: 900px;
-			height: 230px;
-			margin: 0px auto;
+			width: 1000px;
+			height: auto;
+			margin: 10px auto;
+			clear: both;
+			border-bottom: 1px solid #000;
 		}
 		.column{
 			width: 400px;
 			float: left;
-		}
-		#section-1{
-			border-bottom: 1px solid #000;
-		}
-		#section-3{
-			border-top: 0px solid #000;
-			height: 50px;
 		}
 
 	</style>
@@ -45,6 +40,7 @@
 		</audio>
 	</section>
 	<section id="section-3">
+		<h1>Testing HTML5 Geolocation API</h1>
 		<button onclick="get_location()">Get position</button>
 		<p id="position"></p>
 	</section>
@@ -120,7 +116,7 @@
 		        elm.innerHTML = "Geolocation is not supported by this browser.";
 		    }
 		}
-		
+
 		function show_position(position)
 		{
 		    elm.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
