@@ -1,9 +1,9 @@
 # beeva-webDev-workout
 Repository with some examples to practice and learn HTML5, JS,...
 
-# Ejemplo CallBacks + $.get:
+# Ejemplo Promises + $.get:
 
-Crear una demostracion de un callback de paso por parámetro de una función ejecutada asíncronamente.
+Crear una demostracion de una promsea como respuesta a una función ejecutada asíncronamente.
 
 La llamada será al API: http://www.timeapi.org/ concretamente al endpoint: http://www.timeapi.org/utc/now
 
