@@ -48,16 +48,16 @@
 </head>
 <body>
 	<header>
-		<h1>Front-End Exercise</h1>
+		<h1>Frist Front-End Exercise</h1>
 	</header>
 
 	<section id="section-1">
 		<div class="column">
-			<h2>Compatibilidad Modernizr</h2>
+			<h2>Check through Modernizr</h2>
 			<ul id="column1"></ul>
 		</div>
 		<div class="column">
-			<h2>Compatibilidad HTML5</h2>
+			<h2>Check through HTML5</h2>
 			<ul id="column2"></ul>
 		</div>
 	</section>
@@ -78,13 +78,16 @@
 		<article></article>
 	</section>
 	<footer>
-		<p>This was only an example of using some APIs</p>
+		<p>This was only an example of using some HTML5 APIs</p>
 	</footer>
-
-	<!-- ////////////////SCRIPTS//////////////// -->
 	<script>
+
+		/////////////////////////////////////////////
+		///////////// DOUBLE LIST SECTION////////////
+		/////////////////////////////////////////////
+
 		//Some HTML5 APIs to check
-		var mock_input = ['svg', 'audio', 'flash', 'batteryapi', 'contenteditable', 'proximity', 'geolocation'];
+		var mock_input = ['canvas', 'audio', 'fullscreen', 'batteryapi', 'video', 'proximity', 'geolocation', 'cookies'];
 		id1 = "column1";
 		id2 = "column2";
 
@@ -127,21 +130,52 @@
 			document.getElementById(id).innerHTML = output;
 		}
 
-		//Aux function that returns true if HTML5 element is supported in browser. Otherwise, return false
+		//Detects if tag is compatible with this browser using native JS only
 		function html5_element_supported(tag)
 		{
 			if(navigator[tag])
-			{
-				var element = document.createElement(tag);
-		    	return Object.prototype.toString.call(element) !== '[object HTMLUnknownElement]';
+			{	
+				return true;
 			}
 			else
 			{
-				return true;
+				var element = document.createElement(tag);
+		    	if(Object.prototype.toString.call(element) !== '[object HTMLUnknownElement]')
+		    	{
+		    		return true;
+		    	}
+		    	else
+		    	{
+		    		if(tag == 'fullscreen')
+		    		{
+		    			return(document.fullscreenEnabled || 
+								document.webkitFullscreenEnabled || 
+								document.mozFullScreenEnabled ||
+								document.msFullscreenEnabled
+							);
+		    		}
+		    		else if(tag == 'batteryapi')
+		    		{
+		    			return(navigator.battery || 
+		    					navigator.webkitBattery || 
+		    					navigator.mozBattery || 
+		    					navigator.msBattery
+		    				);
+		    		}
+		    		else if(tag == 'cookies')
+		    		{
+		    			return navigator.cookieEnabled;
+		    		}
+		    		else
+		    			return false;
+		    	}
 			}
 		}
-	</script>
-	<script>
+
+		/////////////////////////////////////////////
+		////////// MAP AND POSITION SECTION//////////
+		/////////////////////////////////////////////
+
 		var elm = document.getElementById("position");
 
 		//Obtains our location
@@ -166,8 +200,7 @@
 		{
 			navigator.geolocation.getCurrentPosition(success);
 		}
-	</script>
-	<script>
+
 		//Print Google Map with our location, obtained by Geolocation HTML5 API
 		function success(position)
 		{
@@ -192,7 +225,8 @@
 			};
 			var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
 
-			var marker = new google.maps.Marker({
+			var marker = new google.maps.Marker
+			({
 				position: coords,
 				map: map,
 				title:"You are here!"
