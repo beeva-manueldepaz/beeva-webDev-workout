@@ -9,6 +9,6 @@ La llamada será al API: http://www.timeapi.org/ concretamente al endpoint: http
 
 La forma de presentar será una web que muestre dicho contenido en un div.
 
-# Sólo podéis importar JQuery
+* Sólo podéis importar JQuery
 
-
+[BEEVA](https://www.beeva.com) | 2016
