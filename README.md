@@ -22,6 +22,6 @@ Nota: Si el disparo de las promesas os da guerra, envolvedla en un setTimeout co
     * q
     * jmespath
 
-* debeis utilizar esta plantilla limpiandola de todo aquello separado de bootstrap.
+* debeis utilizar esta [plantilla](https://gist.github.com/Pelirrojo/c537c30952573d3fd62c) limpiandola de todo aquello separado de bootstrap.
 
-
+[BEEVA](https://www.beeva.com) | 2016
