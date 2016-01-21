@@ -1,14 +1,27 @@
 # beeva-webDev-workout
 Repository with some examples to practice and learn HTML5, JS,...
 
-# Ejemplo Promises + $.get:
+# Ejemplo de librerías de Tratamiento JS
 
-Crear una demostracion de una promsea como respuesta a una función ejecutada asíncronamente.
+El objetivo de la práctica es realizar un código que opere sobre un objeto JSON de una entidad de tipo alumno, que debe ser creado par vosotros y tiene las siguientes condiciones:
 
-La llamada será al API: http://www.timeapi.org/ concretamente al endpoint: http://www.timeapi.org/utc/now
+* ser complejo :) al menos tres niveles de anidamiento en sus propiedades
+* ser polifacético, tiene que tener fechas en timestamp.
+* ser enrevesado, tiene que tener un array de objetos con entidades de tipo nota, con posicion gps, codigo de asignatura,... y a su vez algunas (no todas deben tener arrays).
 
-La forma de presentar será una web que muestre dicho contenido en un div.
+Este código debe llamar a las tres funciones asíncronamente y pintar sólo cuando tenga los tres resultados.
+Las funciones deben pertenecer, una cada una a alguna de las librerías citadas a continuación.
 
-# Sólo podéis importar JQuery
+Nota: Si el disparo de las promesas os da guerra, envolvedla en un setTimeout con segundos diferentes para cada una.
+
+## Condiciones
+
+* Sólo podeis importar:
+    * moment
+    * underscore o lodash
+    * q
+    * jmespath
+
+* debeis utilizar esta plantilla limpiandola de todo aquello separado de bootstrap.
 
 
