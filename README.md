@@ -1,27 +1,18 @@
 # beeva-webDev-workout
 Repository with some examples to practice and learn HTML5, JS,...
 
-# Ejemplo de librerías de Tratamiento JS
+# Hola Mundo en Node.js con Express.js
 
-El objetivo de la práctica es realizar un código que opere sobre un objeto JSON de una entidad de tipo alumno, que debe ser creado par vosotros y tiene las siguientes condiciones:
+El objetivo de la práctica es crear un pequeños servidor en node.js con Express.
 
-* ser complejo :) al menos tres niveles de anidamiento en sus propiedades
-* ser polifacético, tiene que tener fechas en timestamp.
-* ser enrevesado, tiene que tener un array de objetos con entidades de tipo nota, con posicion gps, codigo de asignatura,... y a su vez algunas (no todas deben tener arrays).
-
-Este código debe llamar a las tres funciones asíncronamente y pintar sólo cuando tenga los tres resultados.
-Las funciones deben pertenecer, una cada una a alguna de las librerías citadas a continuación.
-
-Nota: Si el disparo de las promesas os da guerra, envolvedla en un setTimeout con segundos diferentes para cada una.
+El programa ofrecerá una web en el puerto 7000 y responderá "Hola Nombre", dónde nombre será un parámetro de la ruta.
+La ruta será /saludar/:nombre
 
 ## Condiciones
 
-* Sólo podeis importar:
-    * moment
-    * underscore o lodash
-    * q
-    * jmespath
-
-* debeis utilizar esta [plantilla](https://gist.github.com/Pelirrojo/c537c30952573d3fd62c) limpiandola de todo aquello separado de bootstrap.
+* Debe funcionar para las peticiones GET
+* Debe incluir un package.json
+* Debe utilizar express.js
+* Debe existir un script para que funcione el comando $npm start para iniciar el programa.
 
 [BEEVA](https://www.beeva.com) | 2016
